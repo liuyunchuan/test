@@ -1,0 +1,51 @@
+{extend name="base/common"}
+{block name="body"}
+<div class="container">
+	<div class="yuyuedetail">
+		<div>
+			<label for="">来访时间</label>
+			<input type="text" name="appointmentdate" value="{$list.appointment|date='Y-m-d H:i:s',###}" disabled="disabled">
+		</div>
+		<div>
+			<label for="">访客姓名</label>
+			<input type="text" value="{$list.name}" name="name" disabled="disabled">
+		</div>
+		<div>
+			<label for="">访客手机</label>
+			<input type="text" value="{$list.phone}" name="phone" disabled="disabled">
+		</div>
+		<div>
+			<label for="">来访人数</label>
+			<input type="text" value="{$list['accompanying']?$list['accompanying']:'若干'}" disabled="disabled">
+		</div>					
+		<div>
+			<label for="">来访事由</label>
+			<input type="text" value="{$list.account}" disabled="disabled">
+		</div>
+		<div>
+			<label for="">见面地址</label>
+			<input type="text" value="{$list.address}" disabled="disabled">
+		</div>
+		<div>
+			<label for="">车牌号码</label>
+			<input type="text" value="{$list.car_num}" disabled="disabled" >
+		</div>
+		{eq name="list['status']" value="0"}
+		<div class="yuema">
+			<a href="{:url('refuse',array('id'=>$list['id']))}" class="hehea blue-btn agree-btn">拒绝预约</a>
+			<a href="{:url('agree',array('id'=>$list['id']))}" class="hehea blue-nobg-btn disagree-btn">同意预约</a>
+		</div>
+		{/eq}
+		<a href="javascript:void(0)" onclick="WeixinJSBridge.call('closeWindow');" class="hehea return-btn">返回</a>
+	</div>
+</div>
+<script>
+window.onpopstate = function(event) {
+      // if (event.state.page === 'state1') {
+        WeixinJSBridge.call('closeWindow');
+      // }
+    }
+</script>
+{/block}
+{block name="js"}
+{/block}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <title> 微信预约 | 德生访客易 </title> -->
+    <title> 微信预约 </title>
+
+    <!-- Bootstrap -->
+    <link href="__PUBLIC__/static/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="__PUBLIC__/static/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="__PUBLIC__/static/vendors/nprogress/nprogress.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="__PUBLIC__/static/build/css/custom.min.css" rel="stylesheet">
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <!-- page content -->
+        <div class="col-md-12">
+          <div class="col-middle">
+            <div class="text-center text-center">
+              <!-- <h1> 访客易 </h1> -->
+              <h1> 微信预约系统 </h1>
+              <h2> 欢迎登录微信预约系统 </h2>
+              <!-- <p>This page you are looking for does not exist <a href="#">Report this?</a> -->
+              </p>
+              <div class="mid_center">
+                <h3></h3>
+                <form action="{:url('login')}" method="post">
+                  <div class="col-xs-12 form-group pull-right top_search">
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="请输入用户名" name="username" >
+                      <span class="input-group-btn">
+                              <button class="btn btn-default" type="button">Go!</button>
+                          </span>
+                    </div>
+
+                    <div class="input-group">
+                      <input type="password" class="form-control" placeholder="请输入密码" name="password">
+                      <span class="input-group-btn">
+                              <button class="btn btn-default" type="button">Go!</button>
+                          </span>
+                    </div>
+                    <button type="submit" class="btn btn-success"  id="login-btn"> 登录系统 </button>
+
+                  </div>
+
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="__PUBLIC__/static/vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="__PUBLIC__/static/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="__PUBLIC__/static/vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="__PUBLIC__/static/vendors/nprogress/nprogress.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="__PUBLIC__/static/build/js/custom.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+<script src="__PUBLIC__/static/home/js/jquery.min.js"></script>
+<script src="__PUBLIC__/static/home/js/rotaryDraw.js"></script>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/home/css/bootstrap.min.css"    />
+<script type="text/javascript" src="__PUBLIC__/static/home/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/static/home/js/bootstrap.min.js"   ></script>	
+<script type="text/javascript" src="__PUBLIC__/static/home/js/lyc_common.js" ></script>
+<script type="text/javascript" src="__PUBLIC__/static/home/js/lyc_wenjuan.js" ></script>
+<title> 德生问卷系统 </title>
+<style>
+	*{padding:0;margin:0;}
+	body{
+		/*background:#f03200;*/
+		background:rgb(250, 165, 33);
+		/*background:hsl(253, 140, 20);*/
+	}
+	.error-number{
+      margin-top: 50px; 
+      /*background: red;*/
+    }
+    h2 strong{
+    	color:#fff;
+    }
+    .top_search{
+      margin-top: 50px;
+    }
+	.box{
+		position:relative;
+		max-width:750px;
+		margin:0 auto;
+	}
+	.box .img01{
+		width:100%;
+	}
+	.box .drawBtn{
+		position:absolute;
+		width:10rem;
+		height:auto;
+		left:50%;
+		margin-left:-5rem;
+	}
+
+</style>
+<script>
+	history.pushState({page : 'state1'}, 'state','#state1');
+	history.pushState({page : 'state2'}, 'state','#state2');
+</script>
+</head>
+<body>
+<div class="container body">
+      <div class="main_container">
+        <!-- page content -->
+        <div class="col-md-12">
+          <div class="col-middle">
+            <div class="text-center text-center">
+            	<input type="hidden" id="id" value="{$id}">
+				<input type="hidden" id="jiang" value="{$jiang}">
+				<h2 class="error-number"><strong>实名农户提供奖品</strong></h2>
+				<hr>	
+				<h5>如果出现页面错乱,请点击右上角按钮进行刷新</h5>
+				<div class="box">
+				    <img src="__PUBLIC__/static/home/images/img_01.png" class="img01"  >
+			        <img src="__PUBLIC__/static/home/images/img_03.png" class="drawBtn">
+		        </div>
+              
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+      </div>
+    </div>
+<!-- <input type="hidden" id="id" value="8"> -->
+
+
+
+<script>
+$(".box .img01").load(function() {
+	var obj  = $(".drawBtn");
+	var hei  = $(this).height();
+	var hei2 = obj.height();
+	obj.css("top",(hei - hei2)/2);
+});
+</script>
+<script>
+	//share份额[数字没有默认],
+	//speed速度[单位s,最小0.1s],
+	//velocityCurve速度曲线[linear匀速，ease慢快慢，ease-in慢慢开始，ease-out慢慢结束，ease-in-out慢快慢等，用的是css3的速度曲线],可以不写，ease默认值；
+	//callback回调函数
+	//weeks几周[默认2周，可以不写]
+
+
+	//几份和回调函数这两个参数是必填
+	// id的值要小于1否则会指针不会转动 0-0.124/0.125-0.249/0.250-0.374/0.375-0.499/0.50-0.624/0.625-0.745/0.750-0.874/0.875-0.999
+
+	function callbackA(ind)
+	{
+		if(jiang == "谢谢参与")
+		{
+			alert("您这次没有中奖，加油哦");
+		} else {
+			alert("恭喜您获得奖品："+jiang);
+		}
+		window.location.href='show.html';
+	};
+	var id = $("#id").val();
+		id = id*0.125-0.05;
+	var jiang = $("#jiang").val();
+	var newdraw = new turntableDraw('.drawBtn',{
+		share:8,
+		speed:"2s",
+		velocityCurve:"ease",
+		weeks:30,
+		callback:function(num)
+		{ 
+			callbackA(num);
+		},
+	});
+	$(".drawBtn").click(function(event) {
+		//ajax
+		// newdraw.goto(parseInt(Math.random()*8)+1);
+		newdraw.goto( parseInt( id*8 ) +1 );
+	});
+</script>
+<script>
+	window.onpopstate = function(event) {
+      if (event.state.page === 'state1') {
+        WeixinJSBridge.call('closeWindow');
+      }
+    }
+</script>
+
+</body>
+
+</html>

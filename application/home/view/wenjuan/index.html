@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/home/css/bootstrap.min.css"    />
+	<script type="text/javascript" src="__PUBLIC__/static/home/js/jquery.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/static/home/js/bootstrap.min.js"   ></script>	
+	<script type="text/javascript" src="__PUBLIC__/static/home/js/lyc_wenjuan.js" ></script>
+	<title> 德生问卷系统 </title>
+</head>
+<body>
+	<div class="container">
+		<form action="{:url('Wenjuan/index')}" method="post" class="qiandao">
+			<h3>德生代理商研习会调查问卷</h3>
+			<!-- 问题1 -->
+			<div class="form-group input-group-lg">
+				<label><h4>1.请问您的名字是？</h4></label>
+				<input type="text" class="form-control" name="q1" id="q1">
+			</div>
+			<!-- /问题1 -->
+
+			<!-- 问题2 -->
+			<div class="form-group input-group-lg">
+				<label><h4>2.请问您的公司名称是？</h4></label>
+				<input type="text" class="form-control" name="q2" id="q2">
+			</div>
+			<!-- /问题2 -->
+
+			<!-- 问题3 -->
+			<div class="form-group">
+				<label><h4>3.请问贵司是什么类型？</h4></label>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q3" id="q3" value="厂家" aria-label="...">厂家
+					</label>
+				</div>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q3" id="q32" value="办公设备经销商" aria-label="...">办公设备经销商
+					</label>
+				</div>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q3" id="q33" value="系统集成商" aria-label="...">系统集成商
+					</label>
+				</div>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q3" id="q34" value="其它" aria-label="...">其它
+					</label>
+				</div>
+			</div>
+			<!-- /问题4 -->
+
+			<!-- 问题4 -->
+			<div class="form-group">
+				<label><h4>4.请问贵司的人数有多少？</h4></label>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q4" id="q4" value="10人以下" aria-label="...">10人以下
+					</label>
+				</div>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q4" id="q42" value="10-30人" aria-label="...">10-30人
+					</label>
+				</div>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q4" id="q43" value="30-100人" aria-label="...">30-100人
+					</label>
+				</div>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q4" id="q44" value="100人以上" aria-label="...">100人以上
+					</label>
+				</div>
+			</div>
+			<!-- /问题4 -->
+
+			<!-- 问题5 -->
+			<div class="form-group">
+				<label><h4>5.请问您对哪方面的用户市场比较感兴趣</h4></label>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q5" id="q5" value="校园" aria-label="...">校园
+					</label>
+				</div>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q5" id="q52" value="公检法政府监狱等" aria-label="...">公检法政府监狱等
+					</label>
+				</div>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q5" id="q53" value="企业单位" aria-label="...">企业单位
+					</label>
+				</div>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q5" id="q54" value="房地产、物业管理" aria-label="...">房地产、物业管理
+					</label>
+				</div>
+			</div>
+			<!-- /问题5 -->
+			
+			<!-- 问题6 -->
+			<div class="form-group">
+				<label><h4>6.您对这期的产品研习会进行客观的评价</h4></label>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q6" id="q6" value="不满意" aria-label="...">不满意
+					</label>
+				</div>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q6" id="q62" value="一般般" aria-label="...">一般般                         
+					</label>
+				</div>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q6" id="q63" value="还不错" aria-label="...">还不错
+					</label>
+				</div>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q6" id="q64" value="很满意" aria-label="...">很满意
+					</label>
+				</div>
+			</div>
+			<!-- /问题6 -->
+
+			<!-- 问题7 -->
+			<div class="form-group">
+				<label><h4>7.请您为本次的大会主持进行打分</h4></label>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q7" id="q7" value="1-3分" aria-label="...">1-3分
+					</label>
+				</div>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q7" id="q72" value="4-6分" aria-label="...">4-6分
+					</label>
+				</div>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q7" id="q73" value="7-9分" aria-label="...">7-9分
+					</label>
+				</div>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q7" id="q74" value="10分" aria-label="...">10分
+					</label>
+				</div>
+			</div>
+			<!-- /问题7 -->		
+
+			<div class="form-group input-group-lg">
+				<label><h4>8.您认为本次的研习会还有哪些地方可以改进？</h4></label>
+				<input type="text" class="form-control" name="q8" id="q8">
+			</div>
+			<input type="submit" class="btn btn-success btn-lg btn-block" id="qiandao-btn" value="确定">
+			<h1></h1>
+		</form>
+	</div>
+</body>
+</html>

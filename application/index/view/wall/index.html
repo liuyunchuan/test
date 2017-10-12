@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title> 微信墙 </title>
+
+	<!-- Bootstrap -->
+    <link href="__PUBLIC__/static/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="__PUBLIC__/static/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="__PUBLIC__/static/vendors/nprogress/nprogress.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="__PUBLIC__/static/build/css/custom.min.css" rel="stylesheet">
+	<style type="text/css">  
+        .ctxt{  
+            /*background:#666;  */
+            width:1000px;  
+            height:600px;  
+            overflow: hidden;  
+            margin:0 auto;  
+        }  
+        .ctxt p{  
+            position:relative;  
+            left:1000px;  
+            margin:0;  
+            padding:0;
+            font-size: 26px;  
+        }  
+    </style>
+</head>
+<body>
+	<div class="container body">
+      <div class="main_container">
+        <!-- page content -->
+        <div class="col-md-12">
+          <div class="col-middle">
+            <div class="text-center text-center">
+              <h1 class="error-number">德生智盟7月总结大会</h1>
+              <div id="" class="ctxt"></div>  
+
+              <!-- <h2>Access denied</h2> -->
+              <!-- <p>Full authentication is required to access this resource. <a href="#">Report this?</a> -->
+              <!-- </p> -->
+             <!--  <div class="mid_center">
+                <h3>Search</h3>
+                <form>
+                  <div class="col-xs-12 form-group pull-right top_search">
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Search for...">
+                      <span class="input-group-btn">
+                              <button class="btn btn-default" type="button">Go!</button>
+                          </span>
+                    </div>
+                  </div>
+                </form>
+              </div> -->
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+      </div>
+    </div>
+<br />  
+
+	<!-- jQuery -->
+    <script src="__PUBLIC__/static/vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="__PUBLIC__/static/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="__PUBLIC__/static/vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="__PUBLIC__/static/vendors/nprogress/nprogress.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="__PUBLIC__/static/build/js/custom.min.js"></script>
+<!-- <script src="__PUBLIC__/static/vendors/jquery/dist/jquery.min.js"></script> -->
+<script>
+	function getMessages()
+	{
+		// lastId = lastId + 4;
+		$.ajax({
+			url : 'message.html?v=' + (new Date()/1),
+			// data : {'lastId':lastId},
+			success : function(data){
+
+				var obj = jQuery.parseJSON(data)
+	
+				$.each(obj, function(i, item) {
+        			// console.log(item.content);
+			        var msgtxt = item.content;
+			        // 获取随机颜色
+			        var colortxt = getReandomColor();  
+			        // 获取随机高度
+			        var topPos = generateMixed(3);  
+			        console.log( msgtxt );
+			        console.log( colortxt );
+			        // console.log( topPos );
+			        if (topPos > 300)  
+			        {  
+			            topPos = 50;  
+			        }  
+			        var newtxt = '<p style="top:'+topPos+'px; color:'+colortxt+'">'+msgtxt+'</p>';
+			        // console.log( newtxt );  
+			        $(".ctxt").prepend(newtxt);  
+			        var addTextW = $(".ctxt").find("p").width();  
+			        $(".ctxt p").animate({left: '-'+addTextW+"px"}, 15000,function(){  
+			            $(this).hide();  
+			        });    			                      
+        			            			                                  			                                  			                      
+        		});
+    		}
+    	});
+			
+
+	setTimeout( "getMessages()", 1000 );
+	}
+	getMessages();
+	//随机获取颜色值 
+	var colors = ['#a9e813','#55dd2f','#45deff','#c8f0ee'];
+    function getReandomColor(){  
+        // return '#'+(function(h){  
+        // return new Array(7-h.length).join("0")+h  
+        // })((Math.random()*0x1000000<<0).toString(16))  
+        // var res = "";
+        var id = Math.ceil(Math.random()*3);
+        return colors[id];
+    }  
+  
+	//生成随机数据。n表示位数    
+    var jschars = ['0','1','2','3','4','5','0','0','2','1'];    
+    // var jschars = ['0','1','2','3','4','5','6','7','8','9'];    
+    function generateMixed(n) {    
+        var res = "";    
+        for(var i = 0; i < n ; i ++) {    
+            var id = Math.ceil(Math.random()*9);    
+            res += jschars[id];    
+        }    
+        return res;    
+    }   
+</script>
+</body>
+</html>

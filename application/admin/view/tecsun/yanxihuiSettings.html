@@ -1,0 +1,140 @@
+{extend name="base/common"}
+{block name="body"}
+
+<div class="right_col" role="main">
+  <div class="row tile_count">
+    <div class="tile_stats_count">
+          <div class="count"> 研习会问卷调查设置 </div>
+    </div>
+
+  </div>
+  <div class="container">
+    <div class="row">
+      <!-- form input mask -->
+      <div class="">
+        <div class="x_panel">
+          <div class="x_title">
+            <h2> 参数设置 </h2>
+            <ul class="nav navbar-right panel_toolbox">
+              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+              </li>         
+              <li><a class="close-link"><i class="fa fa-close"></i></a>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+          <!-- <div class="x_content" style="display: none"> -->
+            <br />
+            <form class="form-horizontal form-label-left" action="{:url('yanxihuiSettings')}" method="post">
+
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-3"> 当期期数 </label>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <input type="text" class="form-control" name="qi" value="{$list.qi}">
+                  <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-3"> 开始时间 </label>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <input type="text" class="form-control" name="start_time" value="{$list.start_time|date='Y-m-d H:i:s',###}">
+                  <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-3"> 结束时间 </label>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <input type="text" class="form-control" name="end_time" value="{$list.end_time|date='Y-m-d H:i:s',###}">
+                  <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-3"> 奖品1名称 </label>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <input type="text" class="form-control" name="jiang_1_name" value="{$list.jiang_1_name}">
+                  <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-3"> 奖品1数量 </label>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <input type="text" class="form-control" name="jiang_1_num" value="{$list.jiang_1_num}">
+                  <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-3"> 奖品1中奖概率 </label>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <input type="text" class="form-control" name="jiang_1_winning" value="{$list.jiang_1_winning}">
+                  <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-3"> 奖品1剩余数量 </label>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <input type="text" class="form-control" name="jiang_1_rest" value="{$list.jiang_1_rest}" readonly="readonly">
+                  <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-3"> 奖品2名称 </label>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <input type="text" class="form-control" name="jiang_2_name" value="{$list.jiang_2_name}">
+                  <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-3"> 奖品2数量 </label>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <input type="text" class="form-control" name="jiang_2_num" value="{$list.jiang_2_num}">
+                  <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-3"> 奖品2中奖概率 </label>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <input type="text" class="form-control" name="jiang_2_winning" value="{$list.jiang_2_winning}">
+                  <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-3"> 奖品2剩余数量 </label>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <input type="text" class="form-control" name="jiang_2_rest" value="{$list.jiang_2_rest}" readonly="readonly">
+                  <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+                </div>
+              </div>
+              
+              <div class="ln_solid"></div>
+
+              <div class="form-group">
+                <div class="col-md-9 col-md-offset-3">
+                  <button class="btn btn-primary" type="button" id="btn-back"> 返回上层 </button>
+                  <button type="reset" class="btn btn-primary"> 取消操作 </button>
+                  <button type="submit" class="btn btn-success" id="btn-sub"> 确定设置 </button>
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- /form input mask -->
+    </div>
+  </div>
+    
+</div>
+{/block}
+{block name="js"}
+<script src="__PUBLIC__/static/index/js/tecsun_yanxihui.js"></script>
+{/block}

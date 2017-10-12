@@ -1,0 +1,54 @@
+{extend name="base/common"}
+{block name="body"}
+
+<div class="right_col" role="main">
+	<div class="row tile_count">
+		<div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+      		<div class="count"> 来访事由 </div>
+		</div>
+		<div class="x_content">
+            <button type="button" class="btn btn-primary" id="reasons-del"> 删除来访事由 </button>
+            <button type="button" class="btn btn-danger" id="reasons-del-all"> 清空来访事由 </button> 
+            <a href="{:url('reasonsAdd')}"><button type="button" class="btn btn-success" id="reasons-add"> 添加来访事由 </button></a>       
+        </div>
+	</div>
+
+	<div class="table-responsive">
+      <table class="table table-striped jambo_table bulk_action">
+        <thead>
+          <tr class="headings">
+            <th>
+              <input type="checkbox" id="check-all" class="flat">
+            </th>
+            <th class="column-title"> 事由名称 </th>
+            <th class="column-title"> token </th>
+            <th class="column-title no-link last"><span class="nobr">操作</span>
+            </th>
+            <th class="bulk-actions" colspan="7">
+              <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+            </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {volist name="list" id="vo"}
+          <tr class="even pointer">
+            <td class="a-center ">
+              <input type="checkbox" class="flat" name="table_records" value="{$vo.id}">
+            </td>
+            <td class=" "> {$vo.value} </td>
+            <td class=" "> {$vo.token} </td>
+            <td class=" last">
+              <a href="{:url('Reasons/reasonsDetail',array('id'=>$vo['id']))}"> 详情 </a>
+                <a href="{:url('Reasons/reasonsDel',    array('id'=>$vo['id']))}"> 删除 </a>
+            </td>
+          </tr>  
+          {/volist}        
+        </tbody>
+      </table>
+    </div>
+</div>
+{/block}
+{block name="js"}
+<script type="text/javascript" src="__PUBLIC__/static/index/js/reasons.js"></script>
+{/block}

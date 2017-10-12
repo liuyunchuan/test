@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+	<link rel="stylesheet" type="text/css" media="screen and (max-device-width:500px)" href="__PUBLIC__/static/home/css/lyc_index1.css"    />
+	<link rel="stylesheet" type="text/css" media="screen and (min-width:501px)" href="__PUBLIC__/static/home/css/lyc_index.css"    />
+	<script type="text/javascript" src="__PUBLIC__/static/home/js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/static/home/js/jquery.masonry.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/static/home/js/idcard.js"  		 ></script> 
+	<script type="text/javascript" src="__PUBLIC__/static/home/js/lyc_qiandao.js"    ></script> 
+	<title>签到啦</title>
+</head>
+<body>
+	<div class="container">
+		<form action="{:url('Qiandao/index')}" method="post" class="qiandao">
+			<h1>德生智盟总结大会签到</h1>
+			<div>
+				<label>姓名</label>
+				<input type="text" name="name" id="name">
+			</div>
+			<div>
+				<label>部门</label>
+				<select name="department" id="department">
+				<option value=""></option>
+					<option value="实名农户">实名农户</option>
+					<option value="商务部">商务部</option>
+					<option value="电商部">电商部</option>
+					<option value="企划部">企划部</option>
+					<option value="技术部">技术部</option>
+					<option value="客服部">客服部</option>
+					<option value="财务部">财务部</option>					
+					<option value="总经办">总经办</option>
+					<option value="后勤部">后勤部</option>		
+				</select>
+			</div>
+			<input type="submit" class="hehe" id="qiandao-btn" value="签到">
+		</form>
+	</div>
+</body>
+</html>

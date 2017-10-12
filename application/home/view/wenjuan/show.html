@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+	<link rel="stylesheet" type="text/css" media="screen and (max-device-width:500px)" href="__PUBLIC__/static/home/css/lyc_index1.css"    />
+	<link rel="stylesheet" type="text/css" media="screen and (min-device-width:501px)" href="__PUBLIC__/static/home/css/lyc_index.css"    />
+	<title> 德生问卷系统 </title>
+	<script>
+		history.pushState({page : 'state1'}, 'state','#state1');
+		history.pushState({page : 'state2'}, 'state','#state2');
+	</script>
+	<style type="text/css">
+		.container h1:first-child{
+			/*background: rgb( 247, 218, 142 );*/
+			padding-top: 16px;
+			background: rgb( 247, 218, 142 );
+			color: #000;
+		}
+		.container h1:last-child{
+			/*background: rgb( 247, 218, 142 );*/
+			background: #fff;
+			color: #000;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>{$title} </h1>
+		<form class="qiandao">
+			{if condition=" ($jiang=='谢谢参与') OR ($jiang=='') "}
+			<img src="__PUBLIC__/static/home/images/sad1.png" />
+			<h1> 没有中奖哦！</h1>
+			{else  /}
+			<img src="__PUBLIC__/static/home/images/sad2.png" />
+			<h1> 您的奖品是： {$jiang}<br/></h1>
+			{/if}
+		</form>
+	</div>
+	<script>
+		window.onpopstate = function(event) {
+	      if (event.state.page === 'state1') {
+	        WeixinJSBridge.call('closeWindow');
+	      }
+	    }
+	</script>
+</body>
+</html>

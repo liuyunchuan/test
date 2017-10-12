@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/home/css/bootstrap.min.css"    />
+	<script type="text/javascript" src="__PUBLIC__/static/home/js/jquery.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/static/home/js/bootstrap.min.js"   ></script>	
+	<script type="text/javascript" src="__PUBLIC__/static/home/js/lyc_wenjuan.js" ></script>
+	<title> 德生问卷系统 </title>
+</head>
+<body>
+	<div class="container">
+		<form action="{:url('Wenjuan/shouhou')}" method="post" class="qiandao">
+			<h3>售后客户回访</h3>
+			<h5>敬爱的用户，感恩您百忙之中，填写我们的问卷。</h5>
+			<!-- 问题1 -->
+			<div class="form-group input-group-lg">
+				<label><h4>1.请问您是哪种角色？</h4></label>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q1" id="q1" value="机器使用者" aria-label="...">机器使用者
+					</label>
+				</div>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q1" id="q12" value="安保负责人" aria-label="...">安保负责人
+					</label>
+				</div>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q1" id="q13" value="相关工作人员" aria-label="...">相关工作人员
+					</label>
+				</div>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q1" id="q14" value="其他" aria-label="...">其他
+					</label>
+				</div>
+			</div>
+			<!-- /问题1 -->
+
+			<!-- 问题2 -->
+			<div class="form-group input-group-lg">
+				<label><h4>2.请问在贵单位我们该产品的使用频率怎么样？</h4></label>		
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q2" id="q2" value="每天" aria-label="...">每天
+					</label>
+				</div>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q2" id="q22" value="经常" aria-label="...">经常
+					</label>
+				</div>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q2" id="q23" value="偶尔" aria-label="...">偶尔
+					</label>
+				</div>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q2" id="q24" value="从来不用" aria-label="...">从来不用
+					</label>
+				</div>
+			</div>
+			<!-- /问题2 -->
+
+			<!-- 问题3 -->
+			<div class="form-group">
+				<label><h4>3.请问你们日常来访接待量是多少？</h4></label>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q3" id="q3" value="0-50人" aria-label="...">0-50人
+					</label>
+				</div>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q3" id="q32" value="50-200人" aria-label="...">50-200人
+					</label>
+				</div>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q3" id="q33" value="200-1000人" aria-label="...">200-1000人
+					</label>
+				</div>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q3" id="q34" value="1000人以上" aria-label="...">1000人以上
+					</label>
+				</div>
+			</div>
+			<!-- /问题4 -->
+
+			<!-- 问题4 -->
+			<div class="form-group">
+				<label><h4>4.您认为我们这次服务怎么样？</h4></label>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q4" id="q4" value="很满意" aria-label="...">很满意
+					</label>
+				</div>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q4" id="q42" value="比较满意" aria-label="...">比较满意
+					</label>
+				</div>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q4" id="q43" value="一般" aria-label="...">一般
+					</label>
+				</div>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q4" id="q44" value="不满意" aria-label="...">不满意
+					</label>
+				</div>
+			</div>
+			<!-- /问题4 -->
+
+			<!-- 问题5 -->
+			<div class="form-group">
+				<label><h4>5.您认为我们产品哪些方面还需要改进</h4></label>
+				<input type="text" class="form-control" name="q5" id="q5">
+			</div>
+			<!-- /问题5 -->
+			
+			<!-- 问题6 -->
+			<div class="form-group">
+				<label><h4>6.请问贵司的名称</h4></label>
+				<input type="text" class="form-control" name="q6" id="q6">
+			</div>
+			<!-- /问题6 -->
+
+			<input type="submit" class="btn btn-success btn-lg btn-block" id="shouqian-btn" value="确定">
+			<h1></h1>
+		</form>
+	</div>
+</body>
+</html>

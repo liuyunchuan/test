@@ -1,0 +1,82 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <meta charset="utf-8">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <!--  
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />  
+    <link href="favicon.ico" rel="Bookmark" type="image/x-icon" />  
+    -->  
+    <meta name="Generator" content="EditPlus®">  
+    <meta name="Author" content="">  
+    <meta name="Keywords" content="">  
+    <meta name="Description" content="">  
+    <title>Canvas弹幕</title>  
+    <link href="" rel="stylesheet" />  
+    <style type="text/css">  
+         
+        #c1{background:#f1f1f1;}  
+        span{color:#FFFFFF;}  
+    </style>  
+</head>  
+<body>  
+<canvas id="c1" width="600" height="300" >  
+    <span>该浏览器不支持html5</span>  
+</canvas>  
+<br />  
+<input type="text" name='smsg' value="" id="smsg" placeholder="请输入内容" /> <button id="send">发送</button>  
+<!--<button id='start' onclick="startFun('test')">Start</button>  
+<button id='stop' onclick="stopFun()">Stop</button>-->  
+  
+  
+  
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>  
+<script type="text/javascript">     
+    var sv;  
+    var sId;  
+    var oC;  
+    var oGC;     
+    var numW;  
+    var numH;  
+    var maxTxt = 600;  
+      
+  
+$(function(){  
+$("#send").click(function(){  
+        clearInterval(sId);  
+        var m = $("#smsg").val();  
+        //alert(m);  
+        startFun(m);  
+        $("#smsg").val('')  
+    });  
+})  
+    function doDraw(msg){  
+        oC = document.getElementById('c1');  
+        oGC = oC.getContext('2d');     
+        numW = oC.width;  
+        numH = oC.height;  
+        console.log(numW+'-'+numH);  
+  
+        oGC.fillStyle="red";  
+        //oGC.fillRect(0,0,numW,100);  
+        oGC.fillText(msg,numW,100);  
+    }  
+    function startFun(msg){  
+        doDraw(msg);  
+        sId = setInterval(function(){       
+            if (numW > -610)  
+            {  
+                numW--;  
+                console.log(numW);  
+                oGC.clearRect(0,0,oC.width,oC.height);  
+                oGC.fillText(msg,numW,100);  
+            } else {  
+                oGC.clearRect(0,0,oC.width,oC.height);  
+                clearInterval(sId);  
+            }  
+        },10);   
+    }  
+    </script>  
+</body>  
+</html>  

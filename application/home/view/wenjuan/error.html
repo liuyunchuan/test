@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+	<link rel="stylesheet" type="text/css" media="screen and (max-device-width:500px)" href="__PUBLIC__/static/home/css/lyc_index1.css"    />
+	<link rel="stylesheet" type="text/css" media="screen and (min-device-width:501px)" href="__PUBLIC__/static/home/css/lyc_index.css"    />
+	<title> 德生问卷系统 </title>
+	<script>
+		history.pushState({page : 'state1'}, 'state','#state1');
+		history.pushState({page : 'state2'}, 'state','#state2');
+	</script>
+</head>
+<body>
+	<div class="container">
+		<h1> {$title} </h1>
+		<form class="qiandao">
+			<img src="__PUBLIC__/static/home/images/sad.png" />
+			<h1> {$message} <br/></h1>
+		</form>
+	</div>
+</body>
+<script>
+window.onpopstate = function(event)
+{
+	if( event.state.page === 'state1' )
+	{
+		WeixinJSBridge.call( 'closeWindow' );
+	}
+}
+</script>
+</html>

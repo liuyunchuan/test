@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- html头文件 -->
+   {include file="public/head"}
+   <!-- /html头文件 -->
+
+</head>
+<body class="nav-md">
+    
+    <!-- 头部 -->
+    {include file="public/header"}
+    <!-- /头部 -->
+
+    <!-- 主体 -->
+    {include file="public/menu"}
+    {include file="public/top_nav"}
+    {block name="body"}{/block}
+    <!-- /主体 -->
+
+    <!-- 底部 -->
+    {include file="public/footer"}
+    <!-- /底部 -->
+
+    <!-- js文件 -->
+    {include file="public/js"}
+    {block name="js"}{/block}
+    <!-- /js文件 -->
+
+
+</body>
+</html>

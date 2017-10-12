@@ -1,0 +1,87 @@
+{extend name="base/common"}
+{block name="body"}
+ <script type="text/javascript">
+    $(function(){
+        /*将获取的值存到变量里*/
+        var width_screen=screen.width;
+        var height_screen=screen.height;
+        var availWidth_screen=screen.availWidth;
+        var availHeight_screen=screen.availHeight;
+        var colorDepth_screen=screen.colorDepth;
+        console.log("你的屏幕宽为："+width_screen+"<br />你的屏幕高为："+height_screen+"<br />你的屏幕可用宽为："+availWidth_screen+"<br />你的屏幕可用高为："+availHeight_screen+"<br />你的颜色设置所有为数为："+colorDepth_screen);
+        $('table').height(height_screen-110);
+    });
+
+</script>
+	<ul class="ul-list mt-20">
+        {notempty name="list"}
+        {volist name="list" id="vo">}    
+            <li class="item">
+            <table>
+                <tr>
+                    <th>访问类型</th>
+                    <td>
+                        {eq name="$vo.visittype" value="0"}
+                        访客预约
+                        {else/}
+                        员工邀请
+                        {/eq}
+                    </td>
+                </tr>
+                <tr>
+                    <th>访客姓名</th>
+                    <td>{$vo.name}</td>
+                </tr>
+                 <tr>
+                    <th>员工手机</th>
+                    <td>{$vo.ephone}</td>
+                </tr>
+                <tr>
+                    <th>员工姓名</th>
+                    <td>{$vo.ename}</td>
+                </tr>
+                 <tr>
+                    <th>来访人数</th>
+                    <td>{$vo.accompanying}</td>
+                </tr>
+                <tr>
+                    <th>邀访事由</th>
+                    <td>{$vo.account}</td>
+                </tr>
+                <tr>
+                    <th>拜访时间</th>
+                    <td>{$vo.start_time|date='Y-m-d H:i:s',###}</td>
+                </tr>
+
+                
+                <tr>
+                    <th>车牌号码</th>
+                    <td>{$vo.car_num}</td>
+                </tr> 
+                <tr>
+                    <th>见面地址</th>
+                    <td>{$vo.address}</td>
+                </tr> 
+                <tr>
+                    <th>&nbsp;</th>
+                    <td><img src="{$vo['url_img']}"></td>
+                </tr>
+                <tr style="height: 80px;"></tr>
+            </table>
+        </li>
+        {/volist}
+
+        {else /}
+            <li>
+                <center>最近没有预约记录！！</center>
+            </li>
+        {/notempty}      
+    </ul>
+<script>
+	window.onpopstate = function(event) {
+    WeixinJSBridge.call('closeWindow');
+}
+</script>
+{/block}
+{block name="js"}
+{/block}

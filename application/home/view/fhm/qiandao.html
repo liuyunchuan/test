@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+	<link rel="stylesheet" type="text/css" media="screen and (max-device-width:500px)" href="__PUBLIC__/static/home/css/lyc_index1.css"    />
+	<link rel="stylesheet" type="text/css" media="screen and (min-width:501px)" href="__PUBLIC__/static/home/css/lyc_index.css"    />
+	<script type="text/javascript" src="__PUBLIC__/static/home/js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/static/home/js/jquery.masonry.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/static/home/js/idcard.js"  		 ></script> 
+	<script type="text/javascript" src="__PUBLIC__/static/home/js/lyc_fhm.js"    ></script> 
+	<title>报名啦</title>
+	<style>
+	.container h1{
+		font-size: 16px;
+	}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<form action="{:url('Fhm/qiandao')}" method="post" class="qiandao">
+			<h1>2017中国·FHM(洋沙湖)国际摩托艇邀请赛<br><br>新闻发布会</h1>
+			<div>
+				<label>姓名</label>
+				<input type="text" name="name" id="name">
+			</div>
+			<div>
+				<label>联系方式</label>
+				<input type="text" name="phone" id="phone">
+			</div>
+			<!-- <div>
+				<label>职务</label>
+				<input type="text" name="zhiwu" id="zhiwu">
+			</div> -->
+			
+			<input type="submit" class="hehe" id="qiandao-btn" value="报名">
+		</form>
+	</div>
+</body>
+</html>

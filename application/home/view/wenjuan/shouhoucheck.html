@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/static/home/css/bootstrap.min.css"    />
+  <script type="text/javascript" src="__PUBLIC__/static/home/js/jquery.min.js"></script>
+  <script type="text/javascript" src="__PUBLIC__/static/home/js/bootstrap.min.js"   ></script>  
+  <script type="text/javascript" src="__PUBLIC__/static/home/js/lyc_common.js" ></script>
+  <script type="text/javascript" src="__PUBLIC__/static/home/js/lyc_wenjuan.js" ></script>
+  <title> 德生问卷系统 </title>
+  <style type="text/css">
+    /*@brand-primary: darken(#428bca, 6.5%);*/
+    .error-number{
+      margin-top: 50px; 
+      /*background: red;*/
+    }
+    .top_search{
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container body">
+      <div class="main_container">
+        <!-- page content -->
+        <div class="col-md-12">
+          <div class="col-middle">
+            <div class="text-center text-center">
+              <h3 class="error-number text-primary"><strong>售后支持服务满意度调查</strong></h3>
+              <h4 class="text-primary"><strong> 广东 德生 </strong></h4>
+              <!-- <p>请填写您的手机号码。</p> -->
+              <div class="mid_center">
+                <!-- <h3>phone</h3> -->
+                <form action="{:url('shouhoucheck')}" method="post">
+                  <div class="col-xs-12 form-group pull-right top_search">
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="电话" id="phone" name="phone">
+                      <!-- <input type="text" class="form-control" placeholder="电话" id="phone" name="phone" value="18814127575"> -->
+                      <span class="input-group-btn">
+                              <button class="btn btn-primary" id="go-btn" type="submit">Go</button>
+                          </span>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+      </div>
+    </div>
+</body>
+</html>

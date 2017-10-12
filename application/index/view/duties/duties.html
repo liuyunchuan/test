@@ -1,0 +1,211 @@
+{extend name="base/common"}
+{block name="body"}
+
+<div class="right_col" role="main">
+	<div class="row tile_count">
+		<div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+      		<div class="count"> 职务列表 </div>
+		</div>
+		<div class="x_content">
+            <button type="button" class="btn btn-primary">删除</button>
+            <button type="button" class="btn btn-danger">清空</button> 
+            <button type="button" class="btn btn-success">选定记录导出</button>
+            <button type="button" class="btn btn-info">导出所有记录</button>          
+        </div>
+	</div>
+
+	<div class="table-responsive">
+      <table class="table table-striped jambo_table bulk_action">
+        <thead>
+          <tr class="headings">
+            <th>
+              <input type="checkbox" id="check-all" class="flat">
+            </th>
+            <th class="column-title"> 所在物业 </th>
+            <th class="column-title"> 访客姓名 </th>
+            <th class="column-title"> 访客性别 </th>
+            <th class="column-title"> 员工姓名 </th>
+            <th class="column-title"> 来访人数 </th>
+            <th class="column-title"> 车牌号码 </th>
+            <th class="column-title"> 约见时间 </th>
+            <th class="column-title"> 约见地址 </th>
+            <th class="column-title no-link last"><span class="nobr">操作</span>
+            </th>
+            <th class="bulk-actions" colspan="7">
+              <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+            </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="even pointer">
+            <td class="a-center ">
+              <input type="checkbox" class="flat" name="table_records">
+            </td>
+            <td class=" "> 广东德生科技股份有限公司 </td>
+            <td class=" "> 刘运传 </td>
+            <td class=" "> 男 </td>
+            <td class=" "> 刘工 </td>
+            <td class=" "> 1 </td>
+            <td class=" "> 鄂A140P0 </td>
+            <td class=" "> 2017-07-05 11:05 </td>
+            <td class=" "> 广州市天河区软件路15号2楼 </td>
+            <td class=" last"><a href="#">禁用~删除</a>
+            </td>
+          </tr>
+          <tr class="even pointer">
+            <td class="a-center ">
+              <input type="checkbox" class="flat" name="table_records">
+            </td>
+            <td class=" "> 广东德生科技股份有限公司 </td>
+            <td class=" "> 刘运传 </td>
+            <td class=" "> 男 </td>
+            <td class=" "> 刘工 </td>
+            <td class=" "> 1 </td>
+            <td class=" "> 鄂A140P0 </td>
+            <td class=" "> 2017-07-05 11:05 </td>
+            <td class=" "> 广州市天河区软件路15号2楼 </td>
+            <td class=" last"><a href="#">禁用~删除</a>
+            </td>
+          </tr>
+          <tr class="even pointer">
+            <td class="a-center ">
+              <input type="checkbox" class="flat" name="table_records">
+            </td>
+            <td class=" "> 广东德生科技股份有限公司 </td>
+            <td class=" "> 刘运传 </td>
+            <td class=" "> 男 </td>
+            <td class=" "> 刘工 </td>
+            <td class=" "> 1 </td>
+            <td class=" "> 鄂A140P0 </td>
+            <td class=" "> 2017-07-05 11:05 </td>
+            <td class=" "> 广州市天河区软件路15号2楼 </td>
+            <td class=" last"><a href="#">禁用~删除</a>
+            </td>
+          </tr>
+          <tr class="even pointer">
+            <td class="a-center ">
+              <input type="checkbox" class="flat" name="table_records">
+            </td>
+            <td class=" "> 广东德生科技股份有限公司 </td>
+            <td class=" "> 刘运传 </td>
+            <td class=" "> 男 </td>
+            <td class=" "> 刘工 </td>
+            <td class=" "> 1 </td>
+            <td class=" "> 鄂A140P0 </td>
+            <td class=" "> 2017-07-05 11:05 </td>
+            <td class=" "> 广州市天河区软件路15号2楼 </td>
+            <td class=" last"><a href="#">禁用~删除</a>
+            </td>
+          </tr>
+          <tr class="even pointer">
+            <td class="a-center ">
+              <input type="checkbox" class="flat" name="table_records">
+            </td>
+            <td class=" "> 广东德生科技股份有限公司 </td>
+            <td class=" "> 刘运传 </td>
+            <td class=" "> 男 </td>
+            <td class=" "> 刘工 </td>
+            <td class=" "> 1 </td>
+            <td class=" "> 鄂A140P0 </td>
+            <td class=" "> 2017-07-05 11:05 </td>
+            <td class=" "> 广州市天河区软件路15号2楼 </td>
+            <td class=" last"><a href="#">禁用~删除</a>
+            </td>
+          </tr>
+          <tr class="even pointer">
+            <td class="a-center ">
+              <input type="checkbox" class="flat" name="table_records">
+            </td>
+            <td class=" "> 广东德生科技股份有限公司 </td>
+            <td class=" "> 刘运传 </td>
+            <td class=" "> 男 </td>
+            <td class=" "> 刘工 </td>
+            <td class=" "> 1 </td>
+            <td class=" "> 鄂A140P0 </td>
+            <td class=" "> 2017-07-05 11:05 </td>
+            <td class=" "> 广州市天河区软件路15号2楼 </td>
+            <td class=" last"><a href="#">禁用~删除</a>
+            </td>
+          </tr>
+          <tr class="even pointer">
+            <td class="a-center ">
+              <input type="checkbox" class="flat" name="table_records">
+            </td>
+            <td class=" "> 广东德生科技股份有限公司 </td>
+            <td class=" "> 刘运传 </td>
+            <td class=" "> 男 </td>
+            <td class=" "> 刘工 </td>
+            <td class=" "> 1 </td>
+            <td class=" "> 鄂A140P0 </td>
+            <td class=" "> 2017-07-05 11:05 </td>
+            <td class=" "> 广州市天河区软件路15号2楼 </td>
+            <td class=" last"><a href="#">禁用~删除</a>
+            </td>
+          </tr>
+          <tr class="even pointer">
+            <td class="a-center ">
+              <input type="checkbox" class="flat" name="table_records">
+            </td>
+            <td class=" "> 广东德生科技股份有限公司 </td>
+            <td class=" "> 刘运传 </td>
+            <td class=" "> 男 </td>
+            <td class=" "> 刘工 </td>
+            <td class=" "> 1 </td>
+            <td class=" "> 鄂A140P0 </td>
+            <td class=" "> 2017-07-05 11:05 </td>
+            <td class=" "> 广州市天河区软件路15号2楼 </td>
+            <td class=" last"><a href="#">禁用~删除</a>
+            </td>
+          </tr>
+          <tr class="even pointer">
+            <td class="a-center ">
+              <input type="checkbox" class="flat" name="table_records">
+            </td>
+            <td class=" "> 广东德生科技股份有限公司 </td>
+            <td class=" "> 刘运传 </td>
+            <td class=" "> 男 </td>
+            <td class=" "> 刘工 </td>
+            <td class=" "> 1 </td>
+            <td class=" "> 鄂A140P0 </td>
+            <td class=" "> 2017-07-05 11:05 </td>
+            <td class=" "> 广州市天河区软件路15号2楼 </td>
+            <td class=" last"><a href="#">禁用~删除</a>
+            </td>
+          </tr>
+          <tr class="even pointer">
+            <td class="a-center ">
+              <input type="checkbox" class="flat" name="table_records">
+            </td>
+            <td class=" "> 广东德生科技股份有限公司 </td>
+            <td class=" "> 刘运传 </td>
+            <td class=" "> 男 </td>
+            <td class=" "> 刘工 </td>
+            <td class=" "> 1 </td>
+            <td class=" "> 鄂A140P0 </td>
+            <td class=" "> 2017-07-05 11:05 </td>
+            <td class=" "> 广州市天河区软件路15号2楼 </td>
+            <td class=" last"><a href="#">禁用~删除</a>
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+{/block}

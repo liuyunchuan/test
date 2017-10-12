@@ -1,0 +1,115 @@
+{extend name="base/common"}
+{block name="body"}
+
+<div class="right_col" role="main">
+	<div class="clearfix">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+          <div class="x_title">
+            <h2> {$type} <small> 详细信息 </small></h2>
+            <ul class="nav navbar-right panel_toolbox">
+              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+              <li><a class="close-link"><i class="fa fa-close"></i></a>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+            <br />
+            <form id="demo-form2" method="post" data-parsley-validate class="form-horizontal form-label-left">
+
+              <input type="hidden" name="id" value="{$list.id}">
+
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name"> 客户姓名 </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" id="name" name="name" required="required" class="form-control col-md-7 col-xs-12" readonly="readonly" value="{$list.q1}">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name"> 公司名称 </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" id="q2" name="q2" required="required" class="form-control col-md-7 col-xs-12" readonly="readonly" value="{$list.q2}">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label  class="control-label col-md-3 col-sm-3 col-xs-12" for="q3"> 公司类型 </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input id="q3" name="q3" class="form-control col-md-7 col-xs-12" type="text" name="middle-name" readonly="readonly" value="{$list.q3}">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label  class="control-label col-md-3 col-sm-3 col-xs-12" for="q4"> 公司人数 </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input id="q4" name="q4" class="form-control col-md-7 col-xs-12" type="text" name="middle-name" readonly="readonly" value="{$list.q4}">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label  class="control-label col-md-3 col-sm-3 col-xs-12" for="q5"> 市场兴趣 </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input id="q5" name="q5" class="form-control col-md-7 col-xs-12" type="text" name="middle-name" readonly="readonly" value="{$list.q5}">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label  class="control-label col-md-3 col-sm-3 col-xs-12" for="q6"> 客观评价 </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input id="q6" name="q6" class="form-control col-md-7 col-xs-12" type="text" name="middle-name" readonly="readonly" value="{$list.q6}">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label  class="control-label col-md-3 col-sm-3 col-xs-12" for="q7"> 主持打分 </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input id="q7" name="q7" class="form-control col-md-7 col-xs-12" type="text" name="middle-name" readonly="readonly" value="{$list.q7}">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label  class="control-label col-md-3 col-sm-3 col-xs-12" for="q8"> 改进意见 </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input id="q8" name="q8" class="form-control col-md-7 col-xs-12" type="text" name="middle-name" readonly="readonly" value="{$list.q8}">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label  class="control-label col-md-3 col-sm-3 col-xs-12" for="jiang"> 获得奖品 </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input id="jiang" name="jiang" class="form-control col-md-7 col-xs-12" type="text" name="middle-name" readonly="readonly" value="{$list.jiang}">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label  class="control-label col-md-3 col-sm-3 col-xs-12" for="qi"> 研习会期数 </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input id="qi" name="qi" class="form-control col-md-7 col-xs-12" type="text" name="middle-name" readonly="readonly" value="{$list.qi}">
+                </div>
+              </div>
+
+              <div class="ln_solid"></div>
+              <div class="form-group">
+                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                  <button class="btn btn-primary" type="button" id="btn-back"> 返回 </button>
+                  <!-- <button class="btn btn-primary" type="reset"> 重置 </button> -->
+                  <!-- <button class="btn btn-success" type="submit" id="btn-sub"> 确定 </button> -->
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+{/block}
+{block name="js"}
+<script src="__PUBLIC__/static/index/js/user_visitordetail.js"></script>
+{/block}

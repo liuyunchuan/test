@@ -1,0 +1,96 @@
+{extend name="base/common"}
+{block name="body"}
+	<script>
+	var isPhone = 1;
+	return_code = "0";
+	function getCode(e){
+		var phone=$.trim($('#phone').val());
+		if(!checkphone(phone)){
+				$('#phone').focus();
+				return false;
+		}
+		resetCode();
+		sendSMS();
+		return false;
+	}
+
+	function resetCode(){
+		$('#J_getCode').hide();
+		$('#J_second').html('60');
+		$('#J_resetCode').show();
+		var second = 60;
+		var timer = null;
+		timer = setInterval(function(){
+			second -= 1;
+			if(second > 0 ){
+				$('#J_second').html(second);
+			} else {
+				clearInterval(timer);
+				$('#J_getCode').show();
+				$('#J_resetCode').hide();
+			}
+		},1000);
+	}
+
+	function sendSMS() {
+		var mobile = document.getElementById("phone").value;
+		var url    = "duanxin_demo.html";
+		
+		if (mobile == '') {
+			window.alert(" 请输入电话号码！");
+			return;
+		}
+		$.post(url,{"mobile":mobile},function(data,status){
+			return_code = data;
+		});
+	}
+
+	window.onload = function(){	
+		$("#btu").click(function(){
+			var phone  = $.trim($('#phone').val());
+			var idcode = $.trim($('#idcode').val());
+			if(!checkphone( phone )) {
+					$('#phone').focus();
+					return false;
+			}
+			if(idcode != return_code) {
+				$('#idcode').focus();
+				alert('请输入正确的验证码！');
+				return false;
+			}	
+			document.getElementById('binding').submit();
+		});
+
+	}
+	</script>
+	<div class="container">
+		<form action="#" method="post" id="binding" class="qiandao">
+			<h1>请先绑定员工信息</h1>
+		
+			<div class="filed">
+				<label>您的手机</label>
+				<input type="text" class="phone " name="phone" id="phone" value="">
+				<button type="button" class="hehea xiaoheia" onclick="getCode(this)" id="J_getCode">获取验证码</button>
+				<button type="button" class="hehea xiaoheia" id="J_resetCode" style="display:none;"><span id="J_second">60</span>秒</button>
+				<input type="text" class="mobile_no_div" id="mobile_no_div_yourphone" style="display: none">
+				<a class="uin_del" id="uin_del" href="javascript:clearphone('phone','uin_del');"></a>
+
+			</div>
+			<div>
+				<label>验证码</label>
+				<input type="text" class="idcode xiaohei" name="idcode xiaohei" id="idcode">
+			</div>
+
+		<input type="submit" class="hehe" id="btu" value="认证">
+		</form>
+	</div>
+<script>
+window.onpopstate = function(event) {
+    WeixinJSBridge.call('closeWindow');
+}
+</script>
+{/block}
+{block name="js"}
+<script src="__PUBLIC__/static/home/js/lyc_common.js" type="text/javascript"></script>
+<script src="__PUBLIC__/static/home/js/lyc_invitationvip.js"  type="text/javascript"></script>
+{/block}

@@ -1,0 +1,135 @@
+{extend name="base/common"}
+{block name="body"}
+
+<div class="right_col" role="main">
+	<div class="clearfix">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+          <div class="x_title">
+            <h2> {eq name='$list.visittype' value='0'}访客预约{else/}员工邀请{/eq} <small> 详细信息 </small></h2>
+            <ul class="nav navbar-right panel_toolbox">
+              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+              <li><a class="close-link"><i class="fa fa-close"></i></a>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+            <br />
+            <form id="demo-form2" method="post" data-parsley-validate class="form-horizontal form-label-left">
+
+              <input type="hidden" name="id" value="{$list.id}">
+
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="company"> 所在公司 </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" id="company" name="company" required="required" class="form-control col-md-7 col-xs-12" readonly="readonly" value="{$list.company}">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name"> 访客姓名 </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" id="name" name="name" required="required" class="form-control col-md-7 col-xs-12" readonly="readonly" value="{$list.name}">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label  class="control-label col-md-3 col-sm-3 col-xs-12" for="ename"> 员工姓名 </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input id="ename" name="ename" class="form-control col-md-7 col-xs-12" type="text" name="middle-name" readonly="readonly" value="{$list.ename}">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label  class="control-label col-md-3 col-sm-3 col-xs-12" for="start_time"> 来访开始时间 </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input id="start_time" name="start_time" class="form-control col-md-7 col-xs-12" type="text" name="middle-name" readonly="readonly" value="{$list.start_time|date='Y-m-d H:i:s',###}">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label  class="control-label col-md-3 col-sm-3 col-xs-12" for="end_time"> 来访截止时间 </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input id="end_time" name="end_time" class="form-control col-md-7 col-xs-12" type="text" name="middle-name" readonly="readonly" value="{$list.end_time|date='Y-m-d H:i:s',###}">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label  class="control-label col-md-3 col-sm-3 col-xs-12" for="phone"> 访客手机号码 </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input id="phone" name="phone" class="form-control col-md-7 col-xs-12" type="text" name="middle-name" readonly="readonly" value="{$list.phone}">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label  class="control-label col-md-3 col-sm-3 col-xs-12" for="ephone"> 员工手机号码 </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input id="ephone" name="ephone" class="form-control col-md-7 col-xs-12" type="text" name="middle-name" readonly="readonly" value="{$list.ephone}">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label  class="control-label col-md-3 col-sm-3 col-xs-12" for="accompanying"> 来访人数 </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input id="accompanying" name="accompanying" class="form-control col-md-7 col-xs-12" type="text" name="middle-name" readonly="readonly" value="{eq name='$list.accompanying' value='0'}若干人{else/}{$list.accompanying}{/eq}">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label  class="control-label col-md-3 col-sm-3 col-xs-12" for="ephone"> 员工手机号码 </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input id="ephone" name="ephone" class="form-control col-md-7 col-xs-12" type="text" name="middle-name" readonly="readonly" value="{$list.ephone}">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label  class="control-label col-md-3 col-sm-3 col-xs-12" for="car_num"> 车牌号码 </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input id="car_num" name="car_num" class="form-control col-md-7 col-xs-12" type="text" name="middle-name" readonly="readonly" value="{$list.car_num}">
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label  class="control-label col-md-3 col-sm-3 col-xs-12" for="visittype"> 预约发起类型 </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input id="visittype" name="visittype" class="form-control col-md-7 col-xs-12" type="text" name="middle-name" readonly="readonly" value="{eq name='$list.visittype' value='0'}访客预约{else/}员工邀请{/eq}">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label  class="control-label col-md-3 col-sm-3 col-xs-12" for="account"> 来访事由 </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input id="account" name="account" class="form-control col-md-7 col-xs-12" type="text" name="middle-name" readonly="readonly" value="{$list.account}">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label  class="control-label col-md-3 col-sm-3 col-xs-12" for="status"> 预约状态 </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input id="status" name="status" class="form-control col-md-7 col-xs-12" type="text" name="middle-name" readonly="readonly" value='{if condition="$list.status eq 0"}未回复{elseif condition="$list.status eq 1"}已允许{elseif condition="$list.status eq 2"}已拒绝{else /}其他{/if}'>
+                </div>
+              </div>
+             
+
+              <div class="ln_solid"></div>
+              <div class="form-group">
+                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                  <button class="btn btn-primary" type="button" id="btn-back"> 返回 </button>
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+{/block}
+{block name="js"}
+<script src="__PUBLIC__/static/index/js/user_visitordetail.js"></script>
+{/block}

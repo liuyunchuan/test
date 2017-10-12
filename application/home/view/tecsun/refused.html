@@ -1,0 +1,17 @@
+{extend name="base/common"}
+{block name="body"}
+<div class="container">
+	<div class="sorf-tips blue-face">
+		<h1>拒绝成功<br/>已经通知到对方</h1>
+	</div>
+	<div class="myimg"></div>
+	<a class="hehea sad" href="javascript:void(0)" onclick="WeixinJSBridge.call('closeWindow')">好的</a>
+</div>
+<script>
+window.onpopstate = function(event) {
+    WeixinJSBridge.call('closeWindow');
+}
+</script>
+{/block}
+{block name="js"}
+{/block}

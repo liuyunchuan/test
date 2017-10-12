@@ -1,0 +1,69 @@
+{extend name="base/common"}
+{block name="body"}
+
+<div class="right_col" role="main">
+  <div class="row tile_count">
+    <div class="tile_stats_count">
+          <div class="count"> 售后支持服务满意度调查 </div>
+    </div>
+
+  </div>
+<div class="container">
+  <div class="row">
+    <!-- form input mask -->
+    <div class="">
+      <div class="x_panel">
+        <div class="x_title">
+          <h2> 添加问卷对象 </h2>
+          <ul class="nav navbar-right panel_toolbox">
+            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+            </li>         
+            <li><a class="close-link"><i class="fa fa-close"></i></a>
+            </li>
+          </ul>
+          <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+        <!-- <div class="x_content" style="display: none"> -->
+          <br />
+          <form class="form-horizontal form-label-left" action="{:url('shouhouAdd')}" method="post">
+
+            <div class="form-group">
+              <label class="control-label col-md-3 col-sm-3 col-xs-3"> 客户手机号码 </label>
+              <div class="col-md-6 col-sm-6 col-xs-6">
+                <input type="text" class="form-control" name="phone" value="">
+                <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-md-3 col-sm-3 col-xs-3"> 客户姓名 </label>
+              <div class="col-md-6 col-sm-6 col-xs-6">
+                <input type="text" class="form-control" name="name" value="">
+                <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+              </div>
+            </div>
+           
+            
+            <div class="ln_solid"></div>
+
+            <div class="form-group">
+              <div class="col-md-9 col-md-offset-3">
+                <button class="btn btn-primary" type="button" id="btn-back"> 返回上层 </button>
+                <button type="reset" class="btn btn-primary"> 取消操作 </button>
+                <button type="submit" class="btn btn-success" id="btn-sub"> 确定添加 </button>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- /form input mask -->
+  </div>
+</div>
+    
+</div>
+{/block}
+{block name="js"}
+<script src="__PUBLIC__/static/index/js/tecsun_yanxihui.js"></script>
+{/block}

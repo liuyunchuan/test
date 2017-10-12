@@ -1,0 +1,85 @@
+{extend name="base/common"}
+{block name="body"}
+
+<div class="right_col" role="main">
+	<div class="clearfix">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+          <div class="x_title">
+            <h2> 访 客 <small> 详细信息 </small></h2>
+            <ul class="nav navbar-right panel_toolbox">
+              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+              <li><a class="close-link"><i class="fa fa-close"></i></a>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+            <br />
+            <form id="demo-form2" method="post" data-parsley-validate class="form-horizontal form-label-left">
+
+              <input type="hidden" name="id">
+
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name"> 访客姓名 </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" id="name" name="name" required="required" class="form-control col-md-7 col-xs-12" placeholder="必填">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="phone"> 手机号码 </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" id="phone" name="phone" required="required" class="form-control col-md-7 col-xs-12" placeholder="必填">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12"> 微信标识 </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input id="openid" name="openid" class="form-control col-md-7 col-xs-12" type="text" name="middle-name" readonly="readonly">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12"> 身份证号 </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input id="idcard" name="idcard" class="form-control col-md-7 col-xs-12" type="text" name="middle-name">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12"> 员工状态 </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <select name="status" class="form-control">
+                    <option value="1" > 正常使用 </option>
+                    <option value="0" > 禁止使用 </option>
+                    <option value="-1"> 删除状态 </option>
+                    <option value="2" > 解除绑定 </option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="ln_solid"></div>
+              <div class="form-group">
+                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                  <button class="btn btn-primary" type="button" id="btn-back"> 返回 </button>
+                  <button class="btn btn-primary" type="reset">  重置 </button>
+                  <button class="btn btn-success" type="submit" id="btn-sub"> 提交 </button>
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+{/block}
+{block name="js"}
+<script src="__PUBLIC__/static/index/js/user_visitordetail.js"></script>
+{/block}

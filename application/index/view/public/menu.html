@@ -1,0 +1,79 @@
+		<div class="navbar nav_title" style="border: 0;">
+      <a href="{:url('user/visitor')}" class="site_title"><i class="fa fa-paw"></i> <span>微信预约</span></a>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <!-- menu profile quick info -->
+    <div class="profile clearfix">
+      <div class="profile_pic">
+        <img src="__PUBLIC__/static/index/images/user.png" alt="..." class="img-circle profile_img">
+      </div>
+      <div class="profile_info">
+        <span> 欢迎您 </span>
+        <h6><?php echo session('username'); ?></h6>
+      </div>
+    </div>
+    <!-- /menu profile quick info -->
+
+    <br />
+
+    <!-- sidebar menu -->
+    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+      <div class="menu_section">
+        <h3><?php echo session('company'); ?></h3>
+        <ul class="nav side-menu">
+
+          <li><a><i class="fa fa-home"></i> 用户管理 <span class="fa fa-chevron-down"></span></a>
+            <ul class="nav child_menu">
+              <li><a href="{:url('User/visitor')}" > 访客管理 </a></li>
+              <li><a href="{:url('User/employee')}">员工管理 </a></li>
+            </ul>
+          </li>
+
+          <li><a><i class="fa fa-edit"></i> 预约记录 <span class="fa fa-chevron-down"></span></a>
+            <ul class="nav child_menu">
+              <li><a href="{:url('Record/allRecord')}">     所有记录 </a></li>
+              <li><a href="{:url('Record/visitorRecord')}"> 访客预约 </a></li>
+              <li><a href="{:url('Record/employeeRecord')}">员工邀请 </a></li>
+            </ul>
+          </li>
+
+          <li><a href="{:url('Reasons/visitingReason')}"><i class="fa fa-table"></i> 来访事由 </a>
+          </li>
+
+          <!-- <li><a href="{:url('menu/menu')}"><i class="fa fa-table"></i> 自定义菜单 </a>
+          </li> -->
+
+          <!-- <li><a><i class="fa fa-edit"></i> 问卷调查 <span class="fa fa-chevron-down"></span></a>
+            <ul class="nav child_menu">
+              <li><a href="{:url('Tecsun/yanxihui')}"> 研习会      </a></li>
+              <li><a href="{:url('Tecsun/shouqian')}"> 售前问卷调查 </a></li>
+              <li><a href="{:url('Tecsun/shouhou')}">  售后问卷调查 </a></li>
+            </ul>
+          </li> -->
+          
+        </ul>
+      </div>
+
+    </div>
+    <!-- /sidebar menu -->
+
+    <!-- /menu footer buttons -->
+    <div class="sidebar-footer hidden-small">
+      <a data-toggle="tooltip" data-placement="top" title="Settings" href="{:url('Member/memberDetail')}">
+        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+      </a>
+      <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+        <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+      </a>
+      <a data-toggle="tooltip" data-placement="top" title="Lock">
+        <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+      </a>
+      <a data-toggle="tooltip" data-placement="top" title="Logout" href="{:url('Log/logout')}">
+        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+      </a>
+    </div>
+    <!-- /menu footer buttons -->
+  </div>
+</div>

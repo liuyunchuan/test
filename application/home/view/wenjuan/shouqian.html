@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/home/css/bootstrap.min.css"    />
+	<script type="text/javascript" src="__PUBLIC__/static/home/js/jquery.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/static/home/js/bootstrap.min.js"   ></script>	
+	<script type="text/javascript" src="__PUBLIC__/static/home/js/lyc_common.js" ></script>
+	<script type="text/javascript" src="__PUBLIC__/static/home/js/lyc_wenjuan.js" ></script>
+	<title> 德生问卷系统 </title>
+</head>
+<body>
+	<div class="container">
+		<form action="{:url('Wenjuan/shouqian')}" method="post" class="qiandao">
+			<h3>售前支持服务满意度调查</h3>
+			<!-- 问题1 -->
+			<div class="form-group input-group-lg">
+				<label><h4>1.此次技术现场演示，是否达到您的预期？</h4></label>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q1" id="q1" value="能" aria-label="...">能
+					</label>
+				</div>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q1" id="q12" value="不能" aria-label="...">不能
+					</label>
+				</div>
+			</div>
+			<!-- /问题1 -->
+
+			<!-- 问题2 -->
+			<div class="form-group input-group-lg">
+				<label><h4>2.技术小哥是否在约定的时间内到达贵单位？</h4></label>
+				
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q2" id="q2" value="是" aria-label="...">是
+					</label>
+				</div>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q2" id="q22" value="不是" aria-label="...">不是
+					</label>
+				</div>
+			</div>
+			<!-- /问题2 -->
+
+			<!-- 问题3 -->
+			<div class="form-group">
+				<label><h4>3.请问我们的技术小哥服务态度如何？</h4></label>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q3" id="q3" value="态度冷淡" aria-label="...">态度冷淡
+					</label>
+				</div>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q3" id="q32" value="一般" aria-label="...">一般
+					</label>
+				</div>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q3" id="q33" value="比较积极" aria-label="...">比较积极
+					</label>
+				</div>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q3" id="q34" value="很热情" aria-label="...">很热情
+					</label>
+				</div>
+			</div>
+			<!-- /问题4 -->
+
+			<!-- 问题4 -->
+			<div class="form-group">
+				<label><h4>4.讲解演示是否能让贵单位使用人员全面了解产品的功能？</h4></label>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q4" id="q4" value="讲的很清晰很形象" aria-label="...">讲的很清晰很形象
+					</label>
+				</div>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q4" id="q42" value="讲了很全面但是部分不了解" aria-label="...">讲了很全面但是部分不了解
+					</label>
+				</div>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q4" id="q43" value="只听懂部分" aria-label="...">只听懂部分
+					</label>
+				</div>
+				<div class="radio input-lg bg-success">
+					<label style="width: 100%;">
+						<input type="radio" name="q4" id="q44" value="基本听不懂" aria-label="...">基本听不懂
+					</label>
+				</div>
+			</div>
+			<!-- /问题4 -->
+
+			<!-- 问题5 -->
+			<div class="form-group">
+				<label><h4>5.您认为德生在技术支持方面，还需要提升的地方</h4></label>
+				<input type="text" class="form-control" name="q5" id="q5">
+			</div>
+			<!-- /问题5 -->
+			
+			<!-- 问题6 -->
+			<div class="form-group">
+				<label><h4>6.请问贵司的名称</h4></label>
+				<input type="text" class="form-control" name="q6" id="q6">
+			</div>
+			<!-- /问题6 -->
+			<input type="hidden" name="phone" value="{$phone}">
+			<input type="submit" class="btn btn-success btn-lg btn-block" id="shouqian-btn" value="确定">
+			<h1></h1>
+		</form>
+	</div>
+</body>
+</html>

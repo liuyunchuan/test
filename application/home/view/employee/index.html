@@ -1,0 +1,80 @@
+{extend name="base/common"}
+{block name="body"}
+<div class="container">
+        <form action="#" class="qiandao">
+            <h1>员工绑定</h1>
+            <div>
+                <label>姓名</label>
+                <input type="text" value="{$list.name}">
+            </div>
+            <div>
+                <label>手机</label>
+                <input type="text" value="{$list.phone}">
+            </div>
+            <div>
+                <label>身份证</label>
+                <input type="text" value="{$list.idcard}">
+            </div>
+            <div>
+                <label>地址</label>
+                <input type="text" value="{$list.address}">
+            </div>
+            <div class="field field_button">
+            <a class="hehea agree-btn" href="javascript:void(0)" onclick="release({$list.id})">解除绑定</a>
+            <a class="hehea agree-btn me_button" style="color:#ffffff;display:block" href="{:url('Employee/edit',array('id'=>$list['id']))}">修改信息</a>
+            </div>
+        </form>
+    </div>  
+
+    <div class="dialog f-mask hid" id="box1" style="display: none;">
+        <div class="content">
+            <div class="header"><h2>亲，恭喜您注销成功! </h2></div>
+            <div class="operate">
+            <a id="del">#</a>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    function  release(id){
+        // $('#box').removeClass('hid');
+        var url = "release.html";
+        // var link = "{:url('Public/closewindow')}";
+        
+        $.post(url,{id:id},
+            function (data){
+                if(data==1){
+                    WeixinJSBridge.call('closeWindow');
+
+                }
+            }
+        );
+    }
+    $("#cancel").click(function(){
+        $('#box').addClass('hid');
+    });
+    function confirm(id){
+        var url = "index.php?s=/Mobile/Account/confirm_change";
+        
+        $.post(url,{id:id},
+            function (data){
+                if(data==1){
+                    WeixinJSBridge.call('closeWindow');
+                }
+            }
+        );
+
+    }
+    $('#del').click(function(){
+       WeixinJSBridge.call('closeWindow');
+    });
+    </script>
+<script>
+window.onpopstate = function(event) {
+    WeixinJSBridge.call('closeWindow');
+}
+</script>
+{/block}
+{block name="js"}
+<script src="__PUBLIC__/static/home/js/lyc_common.js" type="text/javascript"></script>
+<script src="__PUBLIC__/static/home/js/lyc_invitationvip.js"  type="text/javascript"></script>
+{/block}
